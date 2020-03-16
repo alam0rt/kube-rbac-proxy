@@ -5,12 +5,12 @@ export GO111MODULE
 
 GITHUB_URL=github.com/brancz/kube-rbac-proxy
 GOOS?=$(shell uname -s | tr A-Z a-z)
-GOARCH?=$(shell go env GOARCH)
+GOARCH?=arm
 OUT_DIR=_output
 BIN?=kube-rbac-proxy
 VERSION?=$(shell cat VERSION)-$(shell git rev-parse --short HEAD)
 PKGS=$(shell go list ./... | grep -v /vendor/)
-DOCKER_REPO?=quay.io/brancz/kube-rbac-proxy
+DOCKER_REPO?=docker.io/samlockart/kube-rbac-proxy
 KUBECONFIG?=$(HOME)/.kube/config
 
 check-license:
